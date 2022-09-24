@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="600" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainMenuController">
+    <AnchorPane prefHeight="600.0" prefWidth="1000.0">
+        <Label layoutX="60" layoutY="50.0" text="Inventory Management System">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font></Label>
+
+        <Label layoutX="62.0" layoutY="105.0" text="Parts">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font></Label>
+        <TableView id="allPartsTable" fx:id="partsTable" layoutX="62.0" layoutY="134.0" prefHeight="349.0" prefWidth="410.0">
+            <columns>
+                <TableColumn fx:id="partId" text="Part ID">
+
+                </TableColumn>
+                <TableColumn fx:id="partName" prefWidth="84.0" text="Part Name">
+
+                </TableColumn>
+                <TableColumn fx:id="partStock" prefWidth="107.0" text="Inventory Level">
+
+                </TableColumn>
+                <TableColumn fx:id="partPrice" prefWidth="140.0" text="Price/Cost Per Unit">
+
+                </TableColumn>
+            </columns>
+        </TableView>
+        <ButtonBar layoutX="207.0" layoutY="499.0" prefHeight="40.0" prefWidth="200.0">
+            <buttons>
+                <Button fx:id="addPartBtn" onAction="#AddPartBtn" text="Add" />
+                <Button fx:id="modPartBtn" onAction="#ModPartBtn" text="Modify" />
+                <Button fx:id="deletePartBtn" onAction="#DeletePart" text="Delete" />
+            </buttons>
+        </ButtonBar>
+
+        <Label layoutX="529.0" layoutY="105.0" text="Products">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+
+        <TableView fx:id="productsTable" layoutX="529.0" layoutY="134.0" prefHeight="349.0" prefWidth="410.0">
+            <columns>
+                <TableColumn fx:id="prodId" text="Product ID">
+
+                </TableColumn>
+                <TableColumn fx:id="prodName" text="Product Name">
+
+                </TableColumn>
+                <TableColumn fx:id="prodStock" prefWidth="98.0" text="Inventory Level">
+
+                </TableColumn>
+                <TableColumn fx:id="prodPrice" prefWidth="127.0" text="Price/Cost Per Unit">
+
+                </TableColumn>
+            </columns>
+
+        </TableView>
+        <ButtonBar layoutX="671.0" layoutY="499.0" prefHeight="40.0" prefWidth="200.0">
+            <buttons>
+                <Button fx:id="addProdBtn" onAction="#AddProductBtn" text="Add" />
+                <Button fx:id="modProdBtn" onAction="#ModProductBtn" text="Modify" />
+                <Button fx:id="deleteProdBtn" onAction="#DeleteProduct" text="Delete" />
+            </buttons>
+        </ButtonBar>
+
+        <Button layoutX="901.0" layoutY="555.0" onAction="#Exit" text="Exit" />
+        <HBox layoutX="747.0" layoutY="492.0" spacing="15.0" />
+        <TextField fx:id="searchPart" layoutX="291.0" layoutY="100.0" onKeyPressed="#searchPart" prefWidth="181.0" promptText="Search by Part ID or Name" />
+        <TextField fx:id="searchProduct" layoutX="758.0" layoutY="100.0" onKeyPressed="#searchProduct" prefHeight="27.0" prefWidth="181.0" promptText="Search by Product ID or Name" />
+    </AnchorPane>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>
